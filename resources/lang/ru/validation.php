@@ -12,38 +12,7 @@
 */
 
 return [
-    'attributes' =>   [
 
-        'fact_adress'             => 'Фактический адрес',
-        'legal_adress'             => 'Юридический адрес',
-        'mng_surname'              => 'Фамилия',
-        'mng_name'                 => 'Имя',
-        'mng_patronymic'           => 'Отчество',
-        'inn'                      => 'ИНН',
-        'kpp'                      => 'КПП',
-        'ch_account'               => 'Расчетный счет',
-        'cr_account'               => 'К/C',
-        'bik'                       => 'БИК',
-        'date_start'                =>  'Дата начала',
-        'date_end'                  =>  'Дата окончания',
-        'practice_type_id'          =>  'Тип практики',
-        'company_id'                =>  'Организация',
-        'num_plan'                  =>   'План мест',
-        'date_bg'                   => 'Начало действия',
-        'date_agreement'            => 'Дата подписания',
-
-        'prs_rule'                  => 'Ответственность ',
-        'prs_lname'                 => 'Фамилия',
-        'prs_fname'                 => 'Имя',
-        'prs_sname'                 => 'Отчество',
-        'prs_job'                   =>  'Должность',
-        'agr_type_id'               =>  'Тип договора',
-        'conv_type_id'              => 'Тип доп соглашения',
-        'num_agreement'              => 'Номер договора',
-        'practice_form_id'          => 'Форма проведения'
-
-
-    ],
     'accepted'             => 'Вы должны принять :attribute.',
     'accepted_if'          => 'Поле :attribute должно быть принято, когда :other соответствует :value.',
     'active_url'           => 'Поле :attribute содержит недействительный URL.',
