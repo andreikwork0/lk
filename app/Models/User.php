@@ -68,10 +68,7 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->belongsTo(EducationType::class);
     }
 
-    public function pulpit()
-    {
-        return $this->belongsTo(Pulpit::class);
-    }
+
 
     public function scopeFilter($query, array  $filters){
 
