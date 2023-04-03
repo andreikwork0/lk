@@ -1,0 +1,51 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+@import "~bootstrap-icons/font/bootstrap-icons";
+
+@import "~select2/dist/css/select2.css";
+@import "~suggestions-jquery/dist/css/suggestions.min.css";
+
+
+#app .selection > span.select2-selection{
+    color: #212529;
+    background-color: #f8fafc;
+    padding: 0.5rem !important;
+    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+    height: 40px;
+}
+#app .select2-container--default .select2-selection--single .select2-selection__clear{
+    font-size: 18px;
+    color: #842029;
+    margin-right: 25px;
+    margin-top: -3px;
+}
+
+
+#app .select2-container--default .select2-selection--single .select2-selection__arrow{
+    height: 40px;
+    right: 5px;
+}
+
+.text-dark.icon-index:hover{
+    color: #0d6efd !important;
+    transition: .3s ease;
+}
+
+
+.invalid-feedback{
+    display: block !important;
+}
+.select2 {
+    max-width: 100%;
+}
+
+.hide_col_3 .col-md-3{
+    display: none;
+}

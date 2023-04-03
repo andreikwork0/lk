@@ -1,0 +1,36 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "@popperjs/core": "^2.11.6",
+        "axios": "^0.21",
+        "bootstrap": "^5.2.0",
+        "bootstrap-icons": "^1.9.1",
+        "laravel-mix": "^6.0.6",
+        "lodash": "^4.17.19",
+        "postcss": "^8.1.14",
+        "resolve-url-loader": "^5.0.0",
+        "sass": "^1.32.11",
+        "sass-loader": "^11.0.1",
+        "vue": "^3.2.45",
+        "vue-loader": "^16.2.0",
+        "vue-template-compiler": "^2.7.14",
+        "webpack": "^5.74.0",
+        "webpack-cli": "^4.10.0"
+    },
+    "dependencies": {
+        "@babel/core": "^7.18.13",
+        "@babel/traverse": "^7.18.13",
+        "bootstrap-select": "^1.13.18",
+        "select2": "^4.1.0-rc.0",
+        "suggestions-jquery": "^22.6.0"
+    }
+}
