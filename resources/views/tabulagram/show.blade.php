@@ -36,12 +36,12 @@
                 <h5>Организация: {{$r_head->Organization ?? ''}}</h5>
                 <p>Расчетный листок за {{$r_head->r_date ?? ''}}</p>
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         <p><b>{{$r_head->FIO ?? ''}} ({{ $r_head->SHIFR_SOTR ?? '' }})</b></p>
                         <p>Организация: {{$r_head->Organization ?? ''}}</p>
                         <p>Подразделение: {{$r_head->Name_Dep ?? ''}}</p>
                     </div>
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         <p><b> К выплате: {{$r_head->ToPaySalaries ? number_format($r_head->ToPaySalaries, 2, ',', ' ') : ''}}</b></p>
                         <p> Должность: {{$r_head->shtat_name ?? ''}} {{$r_head->kval ?? ''}}</p>
                         <p> Оклад(тариф): {{$r_head->Tariff ? number_format($r_head->Tariff, 2, ',', ' ') : ''}}</p>
@@ -53,7 +53,7 @@
             @if($r_list)
                 <div class="row">
                 @if(!empty($r_list['Начислено']))
-                    <div class="col-8">
+                    <div class="col-lg-8">
                         <table class="table  table-bordered">
                             <thead>
                             <tr class="text-center  align-middle">
@@ -108,7 +108,7 @@
                         </table>
                     </div>
                 @endif
-                    <div class="col-4">
+                    <div class="col-lg-4">
                         @if(!empty($r_list['Удержано']) ||  !empty($r_list['Выплачено']))
 
                             <table class="table  table-bordered">
@@ -174,7 +174,7 @@
 
                 @if(!empty($r_list['Справочно']))
                     <div class="row">
-                        <div class="col-4">
+                        <div class="col-lg-4">
                             <table class="table  table-bordered">
                                 <thead>
                                 <tr class="text-center  align-middle">
@@ -203,7 +203,7 @@
 
             @if($r_footer)
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         @if($r_footer->dedProperty <> 0)
                             <p>Вычет имущественный: {{$r_footer->dedProperty ? number_format($r_footer->dedProperty , 2, ',', ' ') : ''}}</p>
                         @endif
@@ -218,7 +218,7 @@
 
 
                     </div>
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         @if($r_footer->dedSocial <> 0)
                             <p>Вычет cоциальный: {{$r_footer->dedSocial ? number_format($r_footer->dedSocial , 2, ',', ' ') : ''}} </p>
                         @endif
@@ -228,7 +228,7 @@
 
 
                         @if($r_footer->InsuranceContrib <> 0)
-                            <p>Страховые взносы ПФР: {{$r_footer->InsuranceContrib ? number_format($r_footer->InsuranceContrib , 2, ',', ' ') : ''}} </p>
+                            <p>Страховые внозсы ПФР: {{$r_footer->InsuranceContrib ? number_format($r_footer->InsuranceContrib , 2, ',', ' ') : ''}} </p>
                         @endif
 
                         @if($r_footer->AdvancePayments <> 0)
