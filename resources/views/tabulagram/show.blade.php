@@ -30,7 +30,6 @@
                 </form>
             @endif
         </div>
-
         <div id="printarea">
             @if($r_head)
             <div class="r_head">
