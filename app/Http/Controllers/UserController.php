@@ -35,26 +35,11 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-
-
-        $p_filters = array();
-        $ed_type = $user->education_type;
-        if ($ed_type) {
-            $p_filters = array('ed_type' => $ed_type->id );
-            $pulpits = Pulpit::filter($p_filters)->get();
-        } else {
-            $pulpits =  array();
-        }
-
-
-
 
         $args = array(
             'user'      => User::find($id),
             'roles'     => Role::all(),
             'ed_types'  => EducationType::all(),
-            'pulpits'   => $pulpits,
         );
 
         return view('user.edit', $args);
@@ -72,7 +57,7 @@ class UserController extends Controller
     {
 
         $user = User::findOrFail($id);
-//        dd($request->all());
+
         $user->update($request->all());
         return redirect()->route('users.edit', $user)->with('success', "Пользователь обновлен");
     }

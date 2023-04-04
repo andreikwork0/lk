@@ -76,12 +76,6 @@
                                 name="education_type_id"
                                 label="Тип"
                             />
-                            <x-form.select
-                                :options=$pulpits
-                                name="pulpit_id"
-                                dfvalue="{{$user->pulpit_id}}"
-                                label="Кафедра"
-                            />
 
 
 

@@ -19,22 +19,10 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
-
         //DB::statement('SET FOREIGN_KEY_CHECKS=0;');
        $this->call([
-           // CompanySeeder::class,
-           // ContactPersonSeeder::class,
-           // AgreementSeeder::class,
-           // GrnLetterSeeder::class,
-            AgrStatusSeeder::class,
             EducationTypeSeeder::class,
-            YearLearningSeeder::class,
-            PulpitSeeder::class,
-            PracticeTypeSeeder::class,
-            //PracticeSeeder::class,
             RoleSeeder::class,
-            CountrySeeder::class,
-            ConvTypeSeeder::class
        ]);
         //DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
