@@ -49,3 +49,8 @@
 .hide_col_3 .col-md-3{
     display: none;
 }
+
+@media print
+{
+    .noprint {display:none !important;}
+}
