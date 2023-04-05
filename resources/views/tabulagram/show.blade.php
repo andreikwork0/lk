@@ -78,7 +78,7 @@
                             </tr>
                             @if($r_list['Начислено']['items'])
                                 @php
-                                    $post = $r_list['Выплачено']['items'][0]->execpost;
+                                    $post = $r_list['Начислено']['items'][0]->execpost;
                                 @endphp
                                 @foreach($r_list['Начислено']['items'] as $item)
 
@@ -96,9 +96,9 @@
                                     <tr>
                                         <td> {{$item->payroll ?? ''}}</td>
                                         <td> {{$item->period ?? ''}}</td>
-                                        <td>{{$item->workDay ?? ''}}</td>
-                                        <td>{{$item->workHour ?? ''}}</td>
-                                        <td>{{$item->paid ?? ''}}</td>
+                                        <td>{{$item->workDay ?  $item->workDay : ''}}</td>
+                                        <td>{{$item->workHour ? $item->workHour : ''}}</td>
+                                        <td>{{$item->paid ? $item->paid  : ''}}</td>
                                         <td>{{$item->summa ? number_format($item->summa , 2, ',', ' ') : ''}}</td>
                                     </tr>
                                     @endif
@@ -134,7 +134,8 @@
                                     @if($r_list['Удержано']['items'])
                                         @foreach($r_list['Удержано']['items'] as $item)
                                             <tr>
-                                                <td> {{$item->payroll ?? ''}}</td>
+                                                <td>
+                                                    {{$item->payroll ?? ''}}</td>
                                                 <td> {{$item->period ?? ''}}</td>
                                                 <td>{{$item->summa ? number_format($item->summa , 2, ',', ' ') : ''}}</td>
                                             </tr>
@@ -204,11 +205,19 @@
             @if($r_footer)
                 <div class="row">
                     <div class="col-lg-6">
+                        @if($r_footer->DebtBegin)
+                            @if($r_footer->DebtBegin < 0 )
+                                @php $d_b_str = 'сотрудника' @endphp
+                            @else
+                                @php $d_b_str = 'предприятия' @endphp
+                            @endif
+                            <p>Долг {{$d_b_str}}  на начало: {{$r_footer->DebtBegin ? number_format($r_footer->DebtBegin , 2, ',', ' ') : ''}}</p>
+                        @endif
                         @if($r_footer->dedProperty <> 0)
                             <p>Вычет имущественный: {{$r_footer->dedProperty ? number_format($r_footer->dedProperty , 2, ',', ' ') : ''}}</p>
                         @endif
 
-                        @if($r_footer->debChild <> 0)
+                        @if($r_footer->IsDebChild <> 0)
                             <p>Вычет на детей: {{$r_footer->debChild ? number_format($r_footer->debChild , 2, ',', ' ') : ''}} </p>
                         @endif
 
@@ -219,10 +228,18 @@
 
                     </div>
                     <div class="col-lg-6">
+                        @if($r_footer->DebtEnd)
+                            @if($r_footer->DebtEnd < 0 )
+                                @php $d_e_str = 'сотрудника' @endphp
+                            @else
+                                @php $d_e_str = 'предприятия' @endphp
+                            @endif
+                            <p>Долг {{$d_e_str}}  на конец: {{$r_footer->DebtEnd ? number_format($r_footer->DebtEnd , 2, ',', ' ') : ''}}</p>
+                        @endif
                         @if($r_footer->dedSocial <> 0)
                             <p>Вычет cоциальный: {{$r_footer->dedSocial ? number_format($r_footer->dedSocial , 2, ',', ' ') : ''}} </p>
                         @endif
-                        @if($r_footer->dedPersonal <> 0)
+                        @if($r_footer->IsDedPersonal <> 0)
                             <p>Вычет личный: {{$r_footer->dedPersonal ? number_format($r_footer->dedPersonal , 2, ',', ' ') : ''}} </p>
                         @endif
 
@@ -234,7 +251,6 @@
                         @if($r_footer->AdvancePayments <> 0)
                             <p>Авансовые платежи: {{$r_footer->AdvancePayments ? number_format($r_footer->AdvancePayments , 2, ',', ' ') : ''}}  </p>
                         @endif
-
 
                     </div>
                 </div>

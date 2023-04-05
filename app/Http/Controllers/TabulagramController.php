@@ -77,7 +77,8 @@ class TabulagramController extends Controller
         $id_pers = $str[0] . $str[1] . $str[2] . '-' . $str[3] . $str[4] . $str[5] . '-' . $str[6] . $str[7] . $str[8] . ' ' . $str[9] . $str[10];
 
         //$id_pers='126-053-187 29';
-        //$id_pers='023-996-176 82';
+
+
 
 
         $dates = $this->getDates($id_pers);
