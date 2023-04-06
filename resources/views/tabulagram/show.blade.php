@@ -1,10 +1,10 @@
 @extends('layouts/app')
 
-@section('title-block') Табулеграмма @endsection
+@section('title-block') Расчётный листок @endsection
 
 @section('page-title')
     <x-page-title>
-        <div class="noprint">Табулеграмма</div>
+        <div class="noprint">Расчётный листок</div>
     </x-page-title>
 @endsection
 

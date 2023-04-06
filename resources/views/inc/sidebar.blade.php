@@ -12,7 +12,7 @@
         <li>
             <a href="{{route('tabulagram.show')}}" class="nav-link text-white @if(request()->routeIs('tabulagram.*')) {{'active'}} @endif">
                 @svg('wallet', 'w-16 h-16 bi me-2 text-white')
-                Табулеграмма
+                Расчётный листок
             </a>
         </li>
 
