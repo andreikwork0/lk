@@ -46,6 +46,9 @@ class UserLoginLdap extends Controller
 
         if ($user) {
             //Auth::login($user);
+            // обновить данные
+            $user = (new UserRegisterLdap($request->input('username'), $request->input('password')))->updateUser();
+            if (!$user) return redirect()->route('login')->withErrors(['msg' => 'Ошибка ldap. Пользователь не найден']);
         } else {
             $user = (new UserRegisterLdap($request->input('username'), $request->input('password')))->createUser();
             if (!$user) return redirect()->route('login')->withErrors(['msg' => 'Ошибка ldap. Пользователь не найден']);

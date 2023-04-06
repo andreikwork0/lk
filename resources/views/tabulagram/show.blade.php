@@ -28,6 +28,13 @@
                         <button type="button" class="btn btn-warning mt-3 mx-3" onclick="window.print()">Печать</button>
                     </div>
                 </form>
+            @else
+                <p>
+                    Мы не смогли найти данные по Вам. <br>
+                    Но мы обязательно разберемся. <br>
+                    Сообщите свой снилс нашему сотруднику по телефону +7 (3519)  29-84-76. <br>
+                    Или обратитесь по адресу: пр. К. Маркса, 45/2, ауд. 523
+                </p>
             @endif
         </div>
         <div id="printarea">

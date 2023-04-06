@@ -66,11 +66,18 @@
                                             </li>
                                         @endif
                                     @else
+                                        <li class="nav-item">
+                                            <span class="nav-link  " href="" aria-expanded="false">
+                                                Снилс: {{ Auth::user()->perscode ?  Auth::user()->perscode : 'не найден' }}
+                                            </span>
+                                        </li>
                                         <li class="nav-item dropdown">
                                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                                data-bs-toggle="dropdown" aria-expanded="false">
                                                 {{ Auth::user()->name }}
+
                                             </a>
+
 
                                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                                 <li>
@@ -85,6 +92,7 @@
                                                 </form>
                                             </ul>
                                         </li>
+
                                     @endguest
                                 </ul>
                             </div>
@@ -94,7 +102,24 @@
                     @yield('page-title')
                     @include('inc.messages')
 
-                    @yield('content')
+                    @auth
+                    @if(Auth::user()->perscode)
+                        @yield('content')
+                    @else
+                        <div class="container">
+                            <p>
+                                Мы не смогли найти Ваш снилс в нашей базе данных. <br>
+                                Но мы обязательно разберемся. <br>
+                                Сообщите свой снилс нашему сотруднику по телефону +7 (3519) 29-84-74 <br>
+                                Или обратитесь по адресу: пр. Ленина, 38, главный корпус, каб. 146
+                            </p>
+                        </div>
+                    @endif
+                    @endauth
+
+                    @guest
+                        @yield('content')
+                    @endguest
                 </div>
 
             </div>

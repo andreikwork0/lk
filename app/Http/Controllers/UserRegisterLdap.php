@@ -96,7 +96,29 @@ class UserRegisterLdap extends Controller
         } else {
             return false;
         }
+    }
 
+    public function updateUser(){
 
+        [$this->userLdap, $type] =  $this->findUserLdap();
+        if ($this->userLdap) {
+
+            $givename = explode(' ',$this->userLdap["givenname"][0] );
+            $args =    array(
+                'password'  => Hash::make($this->password),
+                'perscode'     => $this->userLdap["perscode"][0] ?? '',
+                'name'     => $this->userLdap["cn"][0] ?? '',
+                'lname'     => $this->userLdap["sn"][0] ?? '',
+                'fname'     => $givename[0] ?? '',
+                'mname'     => $givename[1] ?? '',
+                'domain'   =>$this->userLdap["dn"]
+            );
+            $user = User::where('username', '=', $this->username)->first();
+            $user->update( $args);
+
+            return $user;
+        } else {
+            return false;
+        }
     }
 }
