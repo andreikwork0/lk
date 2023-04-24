@@ -4,6 +4,7 @@
 use App\Http\Controllers\HomeController;
 
 
+use App\Http\Controllers\RestController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\TabulagramController;
 use App\Http\Controllers\UserController;
@@ -39,6 +40,7 @@ Route::middleware(['auth'])->group( function (){
 
 
 
+    Route::get('/rest',[  RestController::class, 'show'])->name('rest.show');
     Route::get('/tabulagram',[  TabulagramController::class, 'show'])->name('tabulagram.show');
     Route::middleware('role:admin')->group(function (){
         Route::resource('settings',   SettingController::class)->except('show');

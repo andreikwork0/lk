@@ -18,7 +18,16 @@
 
 
         @roleis('admin')
+
         <li>
+            <a href="{{route('rest.show')}}" class="nav-link text-white @if(request()->routeIs('rest.*')) {{'active'}} @endif">
+                @svg('compass', 'w-16 h-16 bi me-2 text-white')
+                Отпуск
+            </a>
+        </li>
+
+        <li>
+
             <a href="{{route('users.index')}}" class="nav-link text-white @if(request()->routeIs('users.*')) {{'active'}} @endif">
                 @svg('person-lines-fill', 'w-16 h-16 bi me-2 text-white')
                 Пользователи
