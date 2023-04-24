@@ -35,10 +35,12 @@
                 </thead>
                 <tbody>
                 @foreach($rests as $rest)
+                    <tr>
                     <td>{{$rest->shtat_name ?? ''}}</td>
                     <td>{{$rest->TypeRest_Name ?? ''}}</td>
                     <td>{{$rest->Length_OnDate ?? ''}}</td>
                     <td>{{$rest->Work ?? ''}}</td>
+                    </tr>
                 @endforeach
                 </tbody>
             </table>
