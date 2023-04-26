@@ -76,6 +76,9 @@ class UserRegisterLdap extends Controller
                 case 'nii' :
                     $ed_type =  NULL;
                     break;
+                case 'ps' :
+                    $ed_type =  NULL;
+                    break;
                 case 'def' :
                     $ed_type =  NULL;
                     break;
