@@ -17,7 +17,6 @@
         </li>
 
 
-        @roleis('admin')
 
         <li>
             <a href="{{route('rest.show')}}" class="nav-link text-white @if(request()->routeIs('rest.*')) {{'active'}} @endif">
@@ -26,6 +25,7 @@
             </a>
         </li>
 
+        @roleis('admin')
         <li>
 
             <a href="{{route('users.index')}}" class="nav-link text-white @if(request()->routeIs('users.*')) {{'active'}} @endif">
