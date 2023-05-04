@@ -52,5 +52,25 @@
 
 @media print
 {
+    @page {size: A4 landscape}
+
+    .table > :not(caption) > * > * {
+        padding: 0.1rem 0.1rem;
+        font-size:  14px;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+    body {
+        font-size:  14px;
+        line-height: 125%;
+    }
+    .container
+    {
+        max-width: 100% !important;
+    }
     .noprint {display:none !important;}
+
+    .page-title-component {display:none !important;}
 }
