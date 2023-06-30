@@ -19,11 +19,15 @@ class RestController extends Controller
           WHERE  id_Pers = :id_pers
         " ;
         $id_pers = $str;
-
-
-
         $rests = DB::connection('shtat_sqlsrv')->select($sql,["id_pers" => $id_pers]);
 
-        return view('rest.show', array('rests' => $rests));
+
+        $sql2 =    "SELECT *
+            FROM [shtat].[dbo].[V_REST_SCHEDULE]
+            WHERE  id_Pers = :id_pers";
+
+        $rests_shedule = DB::connection('shtat_sqlsrv')->select($sql2,["id_pers" => $id_pers]);
+
+        return view('rest.show', array('rests' => $rests , 'rests_shedule' => $rests_shedule));
     }
 }
