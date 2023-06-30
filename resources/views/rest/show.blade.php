@@ -53,6 +53,7 @@
                         <thead>
                         <tr class="text-center  align-middle">
                             <th scope="col">Наименование</th>
+                            <th scope="col">Должность</th>
                             <th scope="col">Дата начала</th>
                             <th scope="col">Длительность(в днях) </th>
                         </tr>
@@ -61,6 +62,7 @@
                         @foreach($rests_shedule as $rest_shedule)
                             <tr>
                                 <td>{{$rest_shedule->TypeRest_Name ?? ''}}</td>
+                                <td>{{$rest_shedule->shtat_name ?? ''}}</td>
                                 <td>{{$rest_shedule->date_begin ? date( 'd.m.Y', strtotime($rest_shedule->date_begin)) : ''}}</td>
                                 <td>{{$rest_shedule->length ?? ''}}</td>
                             </tr>
