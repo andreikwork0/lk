@@ -75,8 +75,7 @@ class TabulagramController extends Controller
         $user = Auth::user();
         $str = $user->perscode;
         //$id_pers = $str[0] . $str[1] . $str[2] . '-' . $str[3] . $str[4] . $str[5] . '-' . $str[6] . $str[7] . $str[8] . ' ' . $str[9] . $str[10];
-        //$id_pers='126-053-187 29';
-
+        //$id_pers='02528168343';
         $id_pers=$str;
 
 
@@ -152,7 +151,9 @@ class TabulagramController extends Controller
 
             }
         }
+        //dd($array);
         return $array;
+
 
     }
 

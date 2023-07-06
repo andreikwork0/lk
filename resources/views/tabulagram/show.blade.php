@@ -94,6 +94,14 @@
                                             <td colspan="6"><i> {{$item->execpost ?? ''}} </i></td>
 
                                         </tr>
+                                        <tr>
+                                            <td> {{$item->payroll ?? ''}}</td>
+                                            <td> {{$item->period ?? ''}}</td>
+                                            <td>{{$item->workDay ?  $item->workDay : ''}}</td>
+                                            <td>{{$item->workHour ? $item->workHour : ''}}</td>
+                                            <td>{{$item->paid ? $item->paid  : ''}}</td>
+                                            <td>{{$item->summa ? number_format($item->summa , 2, ',', ' ') : ''}}</td>
+                                        </tr>
 
                                     @else
                                     <tr>
